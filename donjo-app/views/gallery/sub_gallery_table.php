@@ -10,10 +10,10 @@
 <div id="pageC">
 <table class="inner">
 <tr style="vertical-align:top">
-	<td style="background:#fff;padding:0px;"> 
+	<td style="background:#fff;padding:0px;">
 <div class="content-header">
 </div>
-<div id="contentpane">    
+<div id="contentpane">
 	<form id="mainform" name="mainform" action="" method="post">
     <div class="ui-layout-north panel">
     <h3>Manajemen Gallery Album <?php echo $sub['nama']?></h3>
@@ -21,7 +21,7 @@
             <div class="uibutton-group">
                 <a href="<?php echo site_url("gallery/form_sub_gallery/$gallery")?>" class="uibutton tipsy south" title="Tambah Data" ><span class="icon-plus icon-large">&nbsp;</span>Tambah Gambar Baru</a>
 							<?php if($_SESSION['grup']<4){?>
-                <button type="button" title="Hapus Data" onclick="deleteAllBox('mainform','<?php echo site_url("gallery/delete_all_sub_gallery/$p/$o")?>')" class="uibutton tipsy south"><span class="icon-trash icon-large">&nbsp;</span>Hapus Data
+                <button type="button" title="Hapus Data" onclick="deleteAllBox('mainform','<?php echo site_url("gallery/delete_all_sub_gallery/$p/$o")?>')" class="uibutton tipsy south"><span class="fa fa-trash-o fa-lg">&nbsp;</span>Hapus Data
 							<?php } ?>
             </div>
         </div>
@@ -37,7 +37,7 @@
             </div>
             <div class="right">
                 <input name="cari" id="cari" type="text" class="inputbox help tipped" size="20" value="<?php echo $cari?>" title="Search.."/>
-                <button type="button" onclick="$('#'+'mainform').attr('action','<?php echo site_url('gallery/search')?>');$('#'+'mainform').submit();" class="uibutton tipsy south"  title="Cari Data"><span class="icon-search icon-large">&nbsp;</span>Search</button>
+                <button type="button" onclick="$('#'+'mainform').attr('action','<?php echo site_url('gallery/search')?>');$('#'+'mainform').submit();" class="uibutton tipsy south"  title="Cari Data"><span class="fa fa-search fa-lg">&nbsp;</span>Search</button>
             </div>
         </div>
         <table class="list">
@@ -46,7 +46,7 @@
                 <th>No</th>
                 <th><input type="checkbox" class="checkall"/></th>
                 <th width="120">Aksi</th>
-								
+
 								<?php  if($o==2): ?>
 									<th align="left"><a href="<?php echo site_url("gallery/index/$p/1")?>">Judul Gambar<span class="ui-icon ui-icon-triangle-1-n">
 								<?php  elseif($o==1): ?>
@@ -54,7 +54,7 @@
 								<?php  else: ?>
 									<th align="left"><a href="<?php echo site_url("gallery/index/$p/1")?>">Judul Gambar<span class="ui-icon ui-icon-triangle-2-n-s">
 								<?php  endif; ?>&nbsp;</span></a></th>
-								
+
 								<?php  if($o==4): ?>
 									<th align="left"><a href="<?php echo site_url("gallery/index/$p/3")?>">Enabled / Disabled<span class="ui-icon ui-icon-triangle-1-n">
 								<?php  elseif($o==3): ?>
@@ -62,7 +62,7 @@
 								<?php  else: ?>
 									<th align="left"><a href="<?php echo site_url("gallery/index/$p/3")?>">Enabled / Disabled<span class="ui-icon ui-icon-triangle-2-n-s">
 								<?php  endif; ?>&nbsp;</span></a></th>
-								
+
 								<?php  if($o==6): ?>
 									<th align="left" width='180'><a href="<?php echo site_url("gallery/index/$p/5")?>">Diupload pada<span class="ui-icon ui-icon-triangle-1-n">
 								<?php  elseif($o==5): ?>
@@ -81,9 +81,9 @@
 			</td>
 			<td>
 			<div class="uibutton-group">
-				<a href="<?php echo site_url("gallery/form_sub_gallery/$gallery/$data[id]")?>" class="uibutton tipsy south" title="Ubah Data"><span class="icon-edit icon-large"> Edit </span></a>
+				<a href="<?php echo site_url("gallery/form_sub_gallery/$gallery/$data[id]")?>" class="uibutton tipsy south" title="Ubah Data"><span class="fa fa-pencil-square-o fa-lg"> Edit </span></a>
 			<?php if($_SESSION['grup']<4){?>
-				<a href="<?php echo site_url("gallery/delete_sub_gallery/$gallery/$data[id]")?>"  class="uibutton tipsy south" title="Hapus Data" target="confirm" message="Apakah Anda Yakin?" header="Hapus Data"><span class="icon-trash icon-large"></span></a><?php if($data['enabled'] == '2'):?>
+				<a href="<?php echo site_url("gallery/delete_sub_gallery/$gallery/$data[id]")?>"  class="uibutton tipsy south" title="Hapus Data" target="confirm" message="Apakah Anda Yakin?" header="Hapus Data"><span class="fa fa-trash-o fa-lg"></span></a><?php if($data['enabled'] == '2'):?>
 				<a href="<?php echo site_url('gallery/gallery_lock/'.$data['id'])?>"  class="uibutton tipsy south" title="Enable gallery"><span class="icon-lock icon-large"></span></a><?php elseif($data['enabled'] == '1'): ?>
 				<a href="<?php echo site_url('gallery/gallery_unlock/'.$data['id'])?>"  class="uibutton tipsy south" title="Disable gallery"><span class="icon-unlock icon-large"></span></a>
 			<?php endif?>
@@ -100,7 +100,7 @@
     </div>
 	</form>
     <div class="ui-layout-south panel bottom">
-        <div class="left"> 
+        <div class="left">
 		<div class="table-info">
           <form id="paging" action="<?php echo site_url('gallery')?>" method="post">
         <a href="<?php echo site_url("gallery/clear")?>" class="uibutton">Kembali</a>
@@ -126,7 +126,7 @@
 			<?php  endif; ?>
             </div>
             <div class="uibutton-group">
-                
+
 				<?php  for($i=$paging->start_link;$i<=$paging->end_link;$i++): ?>
 				<a href="<?php echo site_url("gallery/index/$i/$o")?>" <?php  jecho($p,$i,"class='uibutton special'")?> class="uibutton"><?php echo $i?></a>
 				<?php  endfor; ?>

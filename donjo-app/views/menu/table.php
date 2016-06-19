@@ -22,7 +22,7 @@ source: keyword
 </ul>
 </div>
 </td>
-<td style="background:#fff;padding:0px;"> 
+<td style="background:#fff;padding:0px;">
 <div class="content-header">
 <h3>Manajemen Menu</h3>
 </div>
@@ -31,8 +31,8 @@ source: keyword
 <div class="ui-layout-north panel">
 <div class="left">
 <div class="uibutton-group">
-<a href="<?php echo site_url("menu/form/$tip")?>" class="uibutton tipsy south" title="Tambah Data" ><span class="icon-plus-sign icon-large">&nbsp;</span>Tambah Menu Baru</a>
-<button type="button" title="Hapus Data" onclick="deleteAllBox('mainform','<?php echo site_url("menu/delete_all/$tip/$p/$o")?>')" class="uibutton tipsy south"><span class="icon-trash icon-large">&nbsp;</span>Hapus Data
+<a href="<?php echo site_url("menu/form/$tip")?>" class="uibutton tipsy south" title="Tambah Data" ><span class="fa fa-plus-circle fa-lg icon-large">&nbsp;</span>Tambah Menu Baru</a>
+<button type="button" title="Hapus Data" onclick="deleteAllBox('mainform','<?php echo site_url("menu/delete_all/$tip/$p/$o")?>')" class="uibutton tipsy south"><span class="fa fa-trash-o fa-lg">&nbsp;</span>Hapus Data
 </div>
 </div>
 </div>
@@ -47,7 +47,7 @@ source: keyword
 </div>
 <div class="right">
 <input name="cari" id="cari" type="text" class="inputbox help tipped" size="20" value="<?php echo $cari?>" title="Cari.." onkeypress="if (event.keyCode == 13) {$('#'+'mainform').attr('action','<?php echo site_url("menu/search/$tip")?>');$('#'+'mainform').submit();}" />
-<button type="button" onclick="$('#'+'mainform').attr('action','<?php echo site_url("menu/search/$tip")?>');$('#'+'mainform').submit();" class="uibutton tipsy south"title="Cari Data"><span class="icon-search icon-large">&nbsp;</span>Cari</button>
+<button type="button" onclick="$('#'+'mainform').attr('action','<?php echo site_url("menu/search/$tip")?>');$('#'+'mainform').submit();" class="uibutton tipsy south"title="Cari Data"><span class="fa fa-search fa-lg">&nbsp;</span>Cari</button>
 </div>
 </div>
 <table class="list">
@@ -83,11 +83,11 @@ source: keyword
 <input type="checkbox" name="id_cb[]" value="<?php echo $data['id']?>" />
 </td>
 <td><div class="uibutton-group">
-<a href="<?php echo site_url("menu/sub_menu/$tip/$data[id]")?>" class="uibutton tipsy south" title="Rincian Sub Menu"><span class="icon-list icon-large"> Rincian</span></a>
-<a href="<?php echo site_url("menu/form/$tip/$data[id]")?>" class="uibutton tipsy south" title="Ubah Data"><span class="icon-edit icon-large"></span></a>
-<a href="<?php echo site_url("menu/delete/$tip/$data[id]")?>" class="uibutton tipsy south" title="Hapus Data" target="confirm" message="Apakah Anda Yakin?" header="Hapus Data"><span class="icon-trash icon-large"></span></a><?php if($data['enabled'] == '2'):?>
+<a href="<?php echo site_url("menu/sub_menu/$tip/$data[id]")?>" class="uibutton tipsy south" title="Rincian Sub Menu"><span class="fa fa-list fa-lg"> Rincian</span></a>
+<a href="<?php echo site_url("menu/form/$tip/$data[id]")?>" class="uibutton tipsy south" title="Ubah Data"><span class="fa fa-pencil-square-o fa-lg"></span></a>
+<a href="<?php echo site_url("menu/delete/$tip/$data[id]")?>" class="uibutton tipsy south" title="Hapus Data" target="confirm" message="Apakah Anda Yakin?" header="Hapus Data"><span class="fa fa-trash-o fa-lg"></span></a><?php if($data['enabled'] == '2'):?>
 <a href="<?php echo site_url("menu/menu_lock/$tip/".$data['id'])?>"  title="Aktivasi menu"><span class="icon-lock icon-large"></span></a><?php elseif($data['enabled'] == '1'): ?><a href="<?php echo site_url("menu/menu_unlock/$tip/".$data['id'])?>" class="uibutton tipsy south"  title="Non-aktifkan menu"><span class="icon-unlock icon-large"></span></a>
-<a href="<?php echo site_url("menu/ajax_add_sub_menu/$tip/$data[id]")?>" class="uibutton tipsy south" target="ajax-modalx" rel="window" header="Tambah Sub Menu <?php echo $data['nama']?>" class="uibutton tipsy south" title="Tambah Sub Menu"><span class="icon-plus-sign-alt icon-large"></span></a>
+<a href="<?php echo site_url("menu/ajax_add_sub_menu/$tip/$data[id]")?>" class="uibutton tipsy south" target="ajax-modalx" rel="window" header="Tambah Sub Menu <?php echo $data['nama']?>" class="uibutton tipsy south" title="Tambah Sub Menu"><span class="fa fa-plus-circle fa-lg-alt icon-large"></span></a>
 <?php endif?></div>
 </td>
 <td><?php echo $data['nama']?></td>
@@ -100,7 +100,7 @@ source: keyword
 </div>
 </form>
 <div class="ui-layout-south panel bottom">
-<div class="left"> 
+<div class="left">
 <div class="table-info">
 <form id="paging" action="<?php echo site_url('menu')?>" method="post">
 <label>Tampilkan</label>

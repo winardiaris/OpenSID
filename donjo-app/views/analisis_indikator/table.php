@@ -10,15 +10,15 @@
 <div id="pageC">
 	<table class="inner">
 <tr style="vertical-align:top">
-		<td style="background:#fff;padding:0px;"> 
-<div id="contentpane">    
+		<td style="background:#fff;padding:0px;">
+<div id="contentpane">
 	<form id="mainform" name="mainform" action="" method="post">
     <div class="ui-layout-north panel">
     <h3>Manajemen Indikator Analisis - <a href="<?php echo site_url()?>analisis_master/menu/<?php echo $_SESSION['analisis_master']?>"><a href="<?php echo site_url()?>analisis_master/menu/<?php echo $_SESSION['analisis_master']?>"><?php echo $analisis_master['nama']?></a></a></h3>
         <div class="left">
             <div class="uibutton-group">
-                <?php if($analisis_master['lock']==1){?><a href="<?php echo site_url('analisis_indikator/form')?>" class="uibutton tipsy south" title="Tambah Data" ><span class="icon-plus-sign icon-large">&nbsp;</span>Tambah Indikator Baru</a>
-                <button type="button" title="Hapus Data" onclick="deleteAllBox('mainform','<?php echo site_url("analisis_indikator/delete_all/$p/$o")?>')" class="uibutton tipsy south"><span class="icon-trash icon-large">&nbsp;</span>Hapus Data<?php }?>
+                <?php if($analisis_master['lock']==1){?><a href="<?php echo site_url('analisis_indikator/form')?>" class="uibutton tipsy south" title="Tambah Data" ><span class="fa fa-plus-circle fa-lg icon-large">&nbsp;</span>Tambah Indikator Baru</a>
+                <button type="button" title="Hapus Data" onclick="deleteAllBox('mainform','<?php echo site_url("analisis_indikator/delete_all/$p/$o")?>')" class="uibutton tipsy south"><span class="fa fa-trash-o fa-lg">&nbsp;</span>Hapus Data<?php }?>
             </div>
         </div>
     </div>
@@ -26,14 +26,14 @@
         <div class="table-panel top">
             <div class="left">
                 <select name="tipe" onchange="formAction('mainform','<?php echo site_url('analisis_indikator/tipe')?>')">
-                    <option value="">-- Filter by Tipe Indikator --</option>				
+                    <option value="">-- Filter by Tipe Indikator --</option>
 					<?php  foreach($list_tipe AS $data){?>
 					<option value="<?php echo $data['id']?>" <?php if($tipe == $data['id']) :?>selected<?php endif?>><?php echo $data['tipe']?></option>
 					<?php  }?>
                 </select>
 				&nbsp;
                 <select name="kategori" onchange="formAction('mainform','<?php echo site_url('analisis_indikator/kategori')?>')">
-                    <option value="">-- Filter by Kategori Indikator --</option>				
+                    <option value="">-- Filter by Kategori Indikator --</option>
 					<?php  foreach($list_kategori AS $data){?>
 					<option value="<?php echo $data['id']?>" <?php if($kategori == $data['id']) :?>selected<?php endif?>><?php echo $data['kategori']?></option>
 					<?php  }?>
@@ -47,7 +47,7 @@
             </div>
             <div class="right">
                 <input name="cari" id="cari" type="text" class="inputbox help tipped" size="20" value="<?php echo $cari?>" title="Cari.." onkeypress="if (event.keyCode == 13) {$('#'+'mainform').attr('action','<?php echo site_url('analisis_indikator/search')?>');$('#'+'mainform').submit();}" />
-                <button type="button" onclick="$('#'+'mainform').attr('action','<?php echo site_url('analisis_indikator/search')?>');$('#'+'mainform').submit();" class="uibutton tipsy south"  title="Cari Data"><span class="icon-search icon-large">&nbsp;</span>Cari</button>
+                <button type="button" onclick="$('#'+'mainform').attr('action','<?php echo site_url('analisis_indikator/search')?>');$('#'+'mainform').submit();" class="uibutton tipsy south"  title="Cari Data"><span class="fa fa-search fa-lg">&nbsp;</span>Cari</button>
             </div>
         </div>
         <table class="list">
@@ -63,7 +63,7 @@
 			<?php  else: ?>
 				<th align="left" width="10"><a href="<?php echo site_url("analisis_indikator/index/$p/1")?>">Kode<span class="ui-icon ui-icon-triangle-2-n-s">&nbsp;</span></a></th>
 			<?php  endif; ?>
-			
+
 	 		<?php  if($o==4): ?>
 				<th align="left"><a href="<?php echo site_url("analisis_indikator/index/$p/3")?>">Pertanyaan<span class="ui-icon ui-icon-triangle-1-n">&nbsp;</span></a></th>
 			<?php  elseif($o==3): ?>
@@ -71,7 +71,7 @@
 			<?php  else: ?>
 				<th align="left"><a href="<?php echo site_url("analisis_indikator/index/$p/3")?>">Pertanyaan<span class="ui-icon ui-icon-triangle-2-n-s">&nbsp;</span></a></th>
 			<?php  endif; ?>
-			
+
 			<?php  if($o==6): ?>
 				<th align="left" width='100'><a href="<?php echo site_url("analisis_indikator/index/$p/5")?>">Tipe Indikator<span class="ui-icon ui-icon-triangle-1-n">&nbsp;</span></a></th>
 			<?php  elseif($o==5): ?>
@@ -79,7 +79,7 @@
 			<?php  else: ?>
 				<th align="left" width='100'><a href="<?php echo site_url("analisis_indikator/index/$p/5")?>">Tipe Indikator<span class="ui-icon ui-icon-triangle-2-n-s">&nbsp;</span></a></th>
 			<?php  endif; ?>
-            
+
 			<?php  if($o==6): ?>
 				<th align="left" width='100'><a href="<?php echo site_url("analisis_indikator/index/$p/5")?>">Kategori Indikator<span class="ui-icon ui-icon-triangle-1-n">&nbsp;</span></a></th>
 			<?php  elseif($o==5): ?>
@@ -87,7 +87,7 @@
 			<?php  else: ?>
 				<th align="left" width='100'><a href="<?php echo site_url("analisis_indikator/index/$p/5")?>">Kategori Indikator<span class="ui-icon ui-icon-triangle-2-n-s">&nbsp;</span></a></th>
 			<?php  endif; ?>
-			
+
 			<?php  if($o==2): ?>
 				<th align="left" width='50'><a href="<?php echo site_url("analisis_indikator/index/$p/1")?>">Bobot<span class="ui-icon ui-icon-triangle-1-n">&nbsp;</span></a></th>
 			<?php  elseif($o==1): ?>
@@ -95,7 +95,7 @@
 			<?php  else: ?>
 				<th align="left" width='50'><a href="<?php echo site_url("analisis_indikator/index/$p/1")?>">Bobot<span class="ui-icon ui-icon-triangle-2-n-s">&nbsp;</span></a></th>
 			<?php  endif; ?>
-			
+
 			<?php  if($o==2): ?>
 				<th align="left" width='100'><a href="<?php echo site_url("analisis_indikator/index/$p/1")?>">Aksi Analisis<span class="ui-icon ui-icon-triangle-1-n">&nbsp;</span></a></th>
 			<?php  elseif($o==1): ?>
@@ -114,7 +114,7 @@
 				<input type="checkbox" name="id_cb[]" value="<?php echo $data['id']?>" />
 			</td>
           <td><div class="uibutton-group">
-            <?php if($data['id_tipe']==1 OR $data['id_tipe']==2){?><a href="<?php echo site_url("analisis_indikator/parameter/$data[id]")?>" class="uibutton"><span class="icon-list icon-large"> Parameter</span></a><?php }?><a href="<?php echo site_url("analisis_indikator/form/$p/$o/$data[id]")?>" class="uibutton tipsy south" title="Ubah Data"><span class="icon-edit icon-large"> Ubah </span></a><a href="<?php echo site_url("analisis_indikator/delete/$p/$o/$data[id]")?>" class="uibutton tipsy south" title="Hapus Data" target="confirm" message="Apakah Anda Yakin?" header="Hapus Data"><span class="icon-trash icon-large"></span></a>
+            <?php if($data['id_tipe']==1 OR $data['id_tipe']==2){?><a href="<?php echo site_url("analisis_indikator/parameter/$data[id]")?>" class="uibutton"><span class="fa fa-list fa-lg"> Parameter</span></a><?php }?><a href="<?php echo site_url("analisis_indikator/form/$p/$o/$data[id]")?>" class="uibutton tipsy south" title="Ubah Data"><span class="fa fa-pencil-square-o fa-lg"> Ubah </span></a><a href="<?php echo site_url("analisis_indikator/delete/$p/$o/$data[id]")?>" class="uibutton tipsy south" title="Hapus Data" target="confirm" message="Apakah Anda Yakin?" header="Hapus Data"><span class="fa fa-trash-o fa-lg"></span></a>
 			</div>
           </td>
 		  <?php }?>
@@ -131,7 +131,7 @@
     </div>
 	</form>
     <div class="ui-layout-south panel">
-        <div class="left"> 
+        <div class="left">
             <div class="uibutton-group">
 			<a href="<?php echo site_url()?>analisis_indikator/leave" class="uibutton icon prev">Kembali</a>
           <form id="paging" action="<?php echo site_url('analisis_indikator')?>" method="post">
@@ -154,7 +154,7 @@
 			<?php  endif; ?>
             </div>
             <div class="uibutton-group">
-                
+
 				<?php  for($i=$paging->start_link;$i<=$paging->end_link;$i++): ?>
 				<a href="<?php echo site_url("analisis_indikator/index/$i/$o")?>" <?php  jecho($p,$i,"class='uibutton special'")?> class="uibutton"><?php echo $i?></a>
 				<?php  endfor; ?>

@@ -19,7 +19,7 @@
 
 </td>
 
-<td style="background:#fff;padding:0px;"> 
+<td style="background:#fff;padding:0px;">
 <div class="content-header">
 <h3>Manajemen Sub Menu</h3>
 </div>
@@ -29,7 +29,7 @@
 <div class="left">
 <div class="uibutton-group">
 <a href="<?php echo site_url("menu/ajax_add_sub_menu/$tip/$menu")?>" target="ajax-modalx" rel="window" header="Tambah Sub Menu" class="uibutton tipsy south" title="Tambah Sub Menu"><span class="icon-plus icon-large">&nbsp;</span>Tambah Menu Baru</a>
-<button type="button" title="Delete Data" onclick="deleteAllBox('mainform','<?php echo site_url("menu/delete_all_sub_menu/$tip/$menu")?>')" class="uibutton tipsy south"><span class="icon-trash icon-large">&nbsp;</span>Hapus Data
+<button type="button" title="Delete Data" onclick="deleteAllBox('mainform','<?php echo site_url("menu/delete_all_sub_menu/$tip/$menu")?>')" class="uibutton tipsy south"><span class="fa fa-trash-o fa-lg">&nbsp;</span>Hapus Data
 </div>
 </div>
 </div>
@@ -59,7 +59,7 @@
 <input type="checkbox" name="id_cb[]" value="<?php echo $data['id']?>" />
 </td>
 <td><div class="uibutton-group">
-<a href="<?php echo site_url("menu/ajax_add_sub_menu/$tip/$menu/$data[id]")?>"  class="uibutton tipsy south" target="ajax-modalx" rel="window" header="Edit Menu" title="Edit Data"><span class="icon-edit icon-large"> Edit </span></a><a href="<?php echo site_url("menu/delete_sub_menu/$tip/$menu/$data[id]")?>"  class="uibutton tipsy south" title="Delete Data" target="confirm" message="Apakah Anda Yakin?" header="Hapus Data"><span class="icon-trash icon-large"></span></a><?php if($data['enabled'] == '2'):?><a href="<?php echo site_url("menu/menu_lock_sub_menu/$tip/$menu/$data[id]")?>"  class="uibutton tipsy south" title="Enable menu"><span class="icon-lock icon-large"></span></a><?php elseif($data['enabled'] == '1'): ?><a href="<?php echo site_url("menu/menu_unlock_sub_menu/$tip/$menu/$data[id]")?>"  class="uibutton tipsy south" title="Disable menu"><span class="icon-unlock icon-large"></span></a><?php endif;?></div>
+<a href="<?php echo site_url("menu/ajax_add_sub_menu/$tip/$menu/$data[id]")?>"  class="uibutton tipsy south" target="ajax-modalx" rel="window" header="Edit Menu" title="Edit Data"><span class="fa fa-pencil-square-o fa-lg"> Edit </span></a><a href="<?php echo site_url("menu/delete_sub_menu/$tip/$menu/$data[id]")?>"  class="uibutton tipsy south" title="Delete Data" target="confirm" message="Apakah Anda Yakin?" header="Hapus Data"><span class="fa fa-trash-o fa-lg"></span></a><?php if($data['enabled'] == '2'):?><a href="<?php echo site_url("menu/menu_lock_sub_menu/$tip/$menu/$data[id]")?>"  class="uibutton tipsy south" title="Enable menu"><span class="icon-lock icon-large"></span></a><?php elseif($data['enabled'] == '1'): ?><a href="<?php echo site_url("menu/menu_unlock_sub_menu/$tip/$menu/$data[id]")?>"  class="uibutton tipsy south" title="Disable menu"><span class="icon-unlock icon-large"></span></a><?php endif;?></div>
 </td>
 <td><?php echo $data['nama']?></td>
 <td><?php echo $data['aktif']?></td>
@@ -71,7 +71,7 @@
 </div>
 </form>
 <div class="ui-layout-south panel bottom">
-<div class="left"> 
+<div class="left">
 <a href="<?php echo site_url()?>menu/index/<?php echo $tip?>" class="uibutton icon prev">Kembali</a>
 </div>
 <div class="right">

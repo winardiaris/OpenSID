@@ -1,5 +1,5 @@
 
-<div id="pageC"> 
+<div id="pageC">
 <!-- Start of Space Admin -->
 	<table class="inner">
 	<tr style="vertical-align:top">
@@ -13,13 +13,13 @@
 				</ul>
 			</div>
 		</fieldset>
-		
+
 		</td>
-<td style="background:#fff;padding:0px;"> 
+<td style="background:#fff;padding:0px;">
 <div class="content-header">
     <h3>Wilayah Administratif RT (RW <?php echo $rw?> / Dusun <?php echo $dusun?>)</h3>
 </div>
-<div id="contentpane">    
+<div id="contentpane">
 	<form id="mainform" name="mainform" action="" method="post">
     <div class="ui-layout-north panel">
         <div class="left">
@@ -59,7 +59,7 @@
 				<input type="checkbox" name="id_cb[]" value="<?php echo $data['rt']?>" />
 			</td>
           <td width="5">
-            <?php if($data['rt']!="-"){?><a href="<?php echo site_url("sid_wilayah/form_rt/$p/$o/$dusun/$rw/$data[rt]")?>" class="icon-edit icon-large" title="Edit Data"></a><a href="<?php echo site_url("sid_wilayah/delete_rt/$p/$o/$dusun/$rw/$data[rt]")?>" class="icon-trash icon-large" title="Delete Data" target="confirm" message="Apakah Anda Yakin?" header="Hapus Data"></a><?php }?>
+            <?php if($data['rt']!="-"){?><a href="<?php echo site_url("sid_wilayah/form_rt/$p/$o/$dusun/$rw/$data[rt]")?>" class="fa fa-pencil-square-o fa-lg" title="Edit Data"></a><a href="<?php echo site_url("sid_wilayah/delete_rt/$p/$o/$dusun/$rw/$data[rt]")?>" class="fa fa-trash-o fa-lg" title="Delete Data" target="confirm" message="Apakah Anda Yakin?" header="Hapus Data"></a><?php }?>
           </td>
           <td><?php echo $data['rt']?></td>
 		  <td><?php echo $data['nik_ketua']?></td>
@@ -71,8 +71,8 @@
 		  </tr>
         <?php  endforeach; ?>
 		</tbody>
-		
-		
+
+
 		<thead>
             <tr>
                 <th>No</th>
@@ -85,17 +85,17 @@
 				<th align="left" align="center">total_jiwa</th>
 				<th align="left" align="center">total_lk</th>
 				<th align="left" align="center">total_pr</th>
-				
-				
+
+
 			</tr>
 		</thead>
-		
+
         </table>
     </div>
 	</form>
     <div class="ui-layout-south panel bottom">
-        <div class="left"> 
-        <div class="left">     
+        <div class="left">
+        <div class="left">
             <a href="<?php echo site_url("sid_wilayah/sub_rw/$p/$o/$dusun")?>" class="uibutton icon prev">Kembali</a>
         </div>
         </div>
