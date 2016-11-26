@@ -666,11 +666,22 @@
 			// Linux
 			$cmd = "libreoffice --headless --norestore --convert-to pdf --outdir ".FCPATH.LOKASI_ARSIP." ".FCPATH.$berkas_arsip;
 		}
-		exec($cmd, $output, $return);
+		try {
+			exec($cmd, $output, $return);
+		}
+		catch(Exception $e) {
+			$msg = $e->getMessage();
+	    error_log("exec exception: $msg\n", 3, "sid.log"); //<---- Tambah baris ini
+	  	$return = 9;
+		}
 		// Kalau berhasil, pakai pdf
 		if ($return==0) {
-			$nama_surat = pathinfo($nama_surat, PATHINFO_FILENAME).".pdf";
-			$berkas_arsip = $path_arsip.$nama_surat;
+			$nama_pdf = pathinfo($nama_surat, PATHINFO_FILENAME).".pdf";
+			$pdf_exists = is_file($path_arsip.$nama_pdf);
+			if (is_file($path_arsip.$nama_pdf)) {
+				$nama_surat = pathinfo($nama_surat, PATHINFO_FILENAME).".pdf";
+				$berkas_arsip = $path_arsip.$nama_surat;
+			}
 		}
 
 		$_SESSION['success']=8;
